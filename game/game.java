@@ -53,7 +53,7 @@ class Umpire {
         player4Num = p4.PlayerNumb();
     }
 
-    public void compare() {
+    public void Compare() {
         if (guesserNum == player1Num) p1 = true;
         if (guesserNum == player2Num) p2 = true;
         if (guesserNum == player3Num) p3 = true;
@@ -61,23 +61,23 @@ class Umpire {
 
         if (p1) {
             if (p2){
-                if (p3 && p4) System.out.println("All player won the game");
+                if (p3 && p4) System.out.println("All players won the game");
                 else if (p3) System.out.println("Player 4 lost");
                 else if (p4) System.out.println("Player 3 lost");
-                else System.out.println("Player 1 & 2 won");
+                else System.out.println("Players 1 & 2 won");
             } else if (p3) {
                 if (p4) System.out.println("Player 2 lost");
-                else System.out.println("Player 1 & 3 won");
+                else System.out.println("Players 1 & 3 won");
             } else if (p4) {
-                System.out.println("Player 1 & 4 won");
+                System.out.println("Players 1 & 4 won");
             } else System.out.println("Player 1 won");
         } else if (p2) {
             if (p3 && p4) System.out.println("Player 1 lost");
-            else if (p3) System.out.println("Player 2 & 3 won");
-            else if (p4) System.out.println("Player 2 & 4 won");
+            else if (p3) System.out.println("Players 2 & 3 won");
+            else if (p4) System.out.println("Players 2 & 4 won");
             else System.out.println("Player 2 won");
         } else if (p3) {
-            if (p4) System.out.println("Player 3 & 4 won");
+            if (p4) System.out.println("Players 3 & 4 won");
             else System.out.println("Player 3 won");
         } else System.out.println("Player 4 won");
     }
@@ -85,6 +85,11 @@ class Umpire {
 
 public class game {
     public static void main(String[] args) {
-
+        System.out.println("------------------ Game Started ------------------");
+        Umpire um = new Umpire();
+        um.CollectNumFromGuesser();
+        um.CollectNumFromPlayer();
+        um.Compare();
+        System.out.println("------------------ Game Over ------------------");
     }
 }
